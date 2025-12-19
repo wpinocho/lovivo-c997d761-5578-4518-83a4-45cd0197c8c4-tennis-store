@@ -11,16 +11,16 @@ export const FloatingCart = () => {
   if (totalItems === 0) return null
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-8 right-8 z-50 animate-bounce-subtle">
       <Button
         onClick={openCart}
-        className="h-14 w-14 rounded-full bg-primary hover:bg-primary/90 shadow-lg"
+        className="h-16 w-16 rounded-full bg-gradient-to-br from-primary to-orange-600 hover:from-primary/90 hover:to-orange-500 shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-110"
         size="icon"
       >
         <div className="relative">
-          <ShoppingCart className="h-6 w-6" />
+          <ShoppingCart className="h-7 w-7" />
           {totalItems > 0 && (
-            <span className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+            <span className="absolute -top-2 -right-2 bg-white text-primary text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center shadow-lg animate-pulse">
               {totalItems > 99 ? '99+' : totalItems}
             </span>
           )}
